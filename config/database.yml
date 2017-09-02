@@ -15,6 +15,9 @@
 # gem 'pg'
 #
 default: &default
+  username: postgres
+  password: pass1234
+  host: pg
   template: template0
   adapter: postgresql
   encoding: unicode
@@ -82,5 +85,3 @@ test:
 production:
   <<: *default
   database: roggre_production
-  username: roggre
-  password: <%= ENV['ROGGRE_DATABASE_PASSWORD'] %>

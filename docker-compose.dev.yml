@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    image: "chyld/logger"
+    depends_on:
+      - pg
+    ports:
+     - "3333:3333"
+    # command: ["sleep", "infinity"]
+    command: ["./scripts/dev.sh"]
+  pg:
+    image: "postgres"
+    environment:
+      - POSTGRES_PASSWORD=pass1234
+
